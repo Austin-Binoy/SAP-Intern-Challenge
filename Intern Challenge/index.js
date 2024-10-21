@@ -43,6 +43,24 @@ app.get('/employees/:id', (req, res) => {
 app.post('/employees', (req, res) => {
   const newEmployee = req.body;
   if (newEmployee.id && newEmployee.name && newEmployee.email && newEmployee.position && newEmployee.salary) {
+    // Check if salary is a number and is positive
+    let num = parseFloat(newEmployee.salary);
+    if (isNaN(num)) {
+      res.status(400).send('Salary must be a number');
+    } else if(num < 0) { 
+      res.status(400).send('Salary must be positive');
+    }
+    // Check if the employee id already exists
+    const employeeExists = employees.find(emp => emp.id === newEmployee.id);
+    if (employeeExists) {
+      res.status(400).send('Employee already exists');
+    }
+    // Check email is valid format
+    const email = newEmployee.email;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      res.status(400).send('Invalid email format');
+    }
     employees.push(newEmployee);
     res.status(201).send('Employee added successfully');
   } else {

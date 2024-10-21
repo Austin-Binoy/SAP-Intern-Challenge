@@ -17,8 +17,8 @@
         - [x]  **Additional RESTful API endpoints**
         - RECEIVE, PUT, DELETE are all working functions.
     - 15-17:00
-        - [ ]  **Data Validation**
-        - Tried implementing but didnt work like previously done, included method used previously in ‘models/Employees.js’
+        - [Y]  **Data Validation**
+        - All validation should work and be implemented.
         - [ ]  **Unit Tests**
         - Not sure on how to implement.
         
