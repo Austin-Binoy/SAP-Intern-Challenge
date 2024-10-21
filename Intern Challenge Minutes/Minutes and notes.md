@@ -17,13 +17,14 @@
         - [x]  **Additional RESTful API endpoints**
         - RECEIVE, PUT, DELETE are all working functions.
     - 15-17:00
-        - [Y]  **Data Validation**
-        - All validation should work and be implemented.
         - [ ]  **Unit Tests**
         - Not sure on how to implement.
         
         - Endpoints are working as expected.
-
+- 21/10/2024
+    - 12:00
+        -- [Y]  **Data Validation**
+        - All validation should work and be implemented.
 ## Notes:
 
 - Didn’t need to implement `"type": "module"' into json package file, server was running fine.
